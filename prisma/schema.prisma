@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id              Int         @id @default(autoincrement())
+  nombre          String
+  email           String      @unique
+  contrasena_hash String
+  rol             String      // "admin" o "normal" (SQLite no soporta enums de forma nativa en Prisma)
+  creado_en       DateTime    @default(now())
+  ultimo_acceso   DateTime?
+  actividades     Actividad[]
+  sesiones        Sesion[]
+
+  @@map("usuarios")
+}
+
+model Actividad {
+  id             Int                  @id @default(autoincrement())
+  usuario_id     Int
+  usuario        Usuario              @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  tipo           String
+  estado         String               // "pendiente", "en_proceso", "completado", "fallido"
+  fecha_inicio   DateTime             @default(now())
+  fecha_fin      DateTime?
+  metadatos      String?              // Guardado como JSON string en SQLite
+  historial      HistorialActividad[]
+  resultados     Resultado[]
+
+  @@map("actividades")
+}
+
+model HistorialActividad {
+  id              Int       @id @default(autoincrement())
+  actividad_id    Int
+  actividad       Actividad @relation(fields: [actividad_id], references: [id], onDelete: Cascade)
+  estado_anterior String
+  estado_nuevo    String
+  mensaje         String?
+  creado_en       DateTime  @default(now())
+
+  @@map("historial_actividades")
+}
+
+model Sesion {
+  id            Int      @id @default(autoincrement())
+  usuario_id    Int
+  usuario       Usuario  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  refresh_token String   @unique
+  user_agent    String?
+  ip_address    String?
+  creado_en     DateTime @default(now())
+  expira_en     DateTime
+  revocada      Boolean  @default(false)
+
+  @@map("sesiones")
+}
+
+model Resultado {
+  id             Int       @id @default(autoincrement())
+  actividad_id   Int
+  actividad      Actividad @relation(fields: [actividad_id], references: [id], onDelete: Cascade)
+  contenido      String    // Text
+  tipo_resultado String
+  generado_en    DateTime  @default(now())
+
+  @@map("resultados")
+}

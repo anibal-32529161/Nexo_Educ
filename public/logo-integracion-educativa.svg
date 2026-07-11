@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0a1630"/>
+      <stop offset="48%"  stop-color="#0d52a8"/>
+      <stop offset="100%" stop-color="#00bcd4"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1a4e9e"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <path id="topArc" d="M 52,250 A 198,198 0,0,1 448,250" fill="none"/>
+    <path id="botArc" d="M 52,250 A 198,198 0,0,0 448,250" fill="none"/>
+  </defs>
+
+  <!-- Outer gradient ring -->
+  <circle cx="250" cy="250" r="238" fill="none" stroke="url(#ringGrad)" stroke-width="15"/>
+  <!-- Background fill circle -->
+  <circle cx="250" cy="250" r="222" fill="url(#bgGrad)"/>
+
+  <!-- TOP ARC TEXT -->
+  <text fill="white" font-family="Arial Black, Arial, Helvetica, sans-serif"
+        font-size="18" font-weight="900" letter-spacing="1.4">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">INTEGRACIÓN EDUCATIVA</textPath>
+  </text>
+
+  <!-- STAR SEPARATORS -->
+  <polygon fill="white" points="52,241 54.23,246.93 60.56,247.22 55.61,251.18 57.29,257.29 52,253.8 46.71,257.29 48.39,251.18 43.44,247.22 49.77,246.93"/>
+  <polygon fill="white" points="448,241 450.23,246.93 456.56,247.22 451.61,251.18 453.29,257.29 448,253.8 443.71,257.29 444.39,251.18 439.44,247.22 445.77,246.93"/>
+
+  <!-- BOTTOM ARC TEXT -->
+  <text fill="white" font-family="Arial Black, Arial, Helvetica, sans-serif"
+        font-size="22" font-weight="900" letter-spacing="10">
+    <textPath href="#botArc" startOffset="50%" text-anchor="middle">PUEBLA</textPath>
+  </text>
+
+  <!-- GRADUATION CAP (MORTARBOARD) -->
+  <!-- Board: flat diamond/rhombus -->
+  <path d="M 250,132 L 308,170 L 250,208 L 192,170 Z" fill="white"/>
+  <!-- Cap body -->
+  <rect x="224" y="204" width="52" height="30" rx="7" ry="7" fill="white"/>
+  <!-- Tassel button -->
+  <circle cx="308" cy="170" r="7" fill="white"/>
+  <!-- Tassel cord -->
+  <line x1="308" y1="170" x2="308" y2="234" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Tassel block -->
+  <rect x="296" y="234" width="24" height="16" rx="4" ry="4" fill="white"/>
+  <!-- Tassel fringe -->
+  <line x1="299" y1="250" x2="297" y2="265" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="303" y1="250" x2="302" y2="266" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="308" y1="250" x2="308" y2="267" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="313" y1="250" x2="314" y2="266" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="317" y1="250" x2="319" y2="265" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- OPEN BOOK -->
+  <!-- Left page -->
+  <path d="M 250,278 C 232,276 188,283 188,299 L 188,318 C 188,327 232,324 250,329 Z" fill="white"/>
+  <!-- Right page -->
+  <path d="M 250,278 C 268,276 312,283 312,299 L 312,318 C 312,327 268,324 250,329 Z" fill="white"/>
+  <!-- Spine -->
+  <line x1="250" y1="278" x2="250" y2="329" stroke="rgba(10,22,48,0.3)" stroke-width="2.5"/>
+  <!-- Page lines left -->
+  <line x1="196" y1="292" x2="244" y2="289" stroke="rgba(10,22,48,0.22)" stroke-width="1.6"/>
+  <line x1="194" y1="302" x2="244" y2="300" stroke="rgba(10,22,48,0.22)" stroke-width="1.6"/>
+  <line x1="193" y1="312" x2="244" y2="311" stroke="rgba(10,22,48,0.22)" stroke-width="1.6"/>
+  <!-- Page lines right -->
+  <line x1="256" y1="289" x2="304" y2="292" stroke="rgba(10,22,48,0.22)" stroke-width="1.6"/>
+  <line x1="256" y1="300" x2="306" y2="302" stroke="rgba(10,22,48,0.22)" stroke-width="1.6"/>
+  <line x1="256" y1="311" x2="307" y2="312" stroke="rgba(10,22,48,0.22)" stroke-width="1.6"/>
+</svg>

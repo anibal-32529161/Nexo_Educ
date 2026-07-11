@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300">
+  <defs>
+    <linearGradient id="ng" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%"   stop-color="#0d2752"/>
+      <stop offset="42%"  stop-color="#0a5dbf"/>
+      <stop offset="100%" stop-color="#00c8e8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── THREE PARALLEL BEZIER CURVES forming the N-arrow shape ── -->
+  <!-- Inner line -->
+  <path d="M 67,41 C 76,132 134,206 160,207 C 188,207 244,76 260,33"
+        fill="none" stroke="url(#ng)" stroke-width="8.5" stroke-linecap="round"/>
+  <!-- Middle line -->
+  <path d="M 58,50 C 66,140 128,214 160,214 C 192,214 248,82 268,40"
+        fill="none" stroke="url(#ng)" stroke-width="8.5" stroke-linecap="round"/>
+  <!-- Outer line + arrow shaft -->
+  <path d="M 49,59 C 56,148 122,222 160,221 C 196,221 252,88 276,47 L 293,28"
+        fill="none" stroke="url(#ng)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head -->
+  <polyline points="279,18 293,28 283,42"
+            fill="none" stroke="url(#ng)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ── NODE CIRCLES ── -->
+  <circle cx="58"  cy="50"  r="22" fill="#0c1e48"/>
+  <circle cx="58"  cy="50"  r="13" fill="#0d4a94"/>
+  <circle cx="160" cy="214" r="19" fill="#0b1840"/>
+  <circle cx="160" cy="214" r="11" fill="#0d3572"/>
+  <circle cx="268" cy="40"  r="22" fill="#0d2e60"/>
+  <circle cx="268" cy="40"  r="13" fill="#0a6fc4"/>
+  <circle cx="160" cy="118" r="7"  fill="#0878b8"/>
+
+  <!-- ── NEXORA TEXT ── -->
+  <text x="160" y="285"
+        text-anchor="middle"
+        font-family="'Arial Black', 'Impact', Arial, sans-serif"
+        font-size="54"
+        font-weight="900"
+        letter-spacing="2"
+        fill="#0d2752">NEXORA</text>
+</svg>

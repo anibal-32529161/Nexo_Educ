@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Nexora Logo Preview</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; display: flex; height: 100vh; }
+    .panel { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .light { background: #f0f4ff; }
+    .dark  { background: #07090f; }
+    label  { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; opacity: .5; }
+    .light label { color: #0d2752; }
+    .dark  label { color: #c0d8ff; }
+  </style>
+</head>
+<body>
+
+<!-- MODO CLARO -->
+<div class="panel light">
+  <label>Modo Claro</label>
+  <svg viewBox="0 0 400 400" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ngL" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%"   stop-color="#0d2752"/>
+        <stop offset="42%"  stop-color="#0a5dbf"/>
+        <stop offset="100%" stop-color="#00c8e8"/>
+      </linearGradient>
+    </defs>
+    <g transform="translate(-5 5) scale(1.245)">
+      <path d="M 67,41 C 76,132 134,206 160,207 C 188,207 244,76 260,33"
+            fill="none" stroke="url(#ngL)" stroke-width="8.5" stroke-linecap="round"/>
+      <path d="M 58,50 C 66,140 128,214 160,214 C 192,214 248,82 268,40"
+            fill="none" stroke="url(#ngL)" stroke-width="8.5" stroke-linecap="round"/>
+      <path d="M 49,59 C 56,148 122,222 160,221 C 196,221 252,88 276,47 L 293,28"
+            fill="none" stroke="url(#ngL)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="279,18 293,28 283,42"
+                fill="none" stroke="url(#ngL)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="58"  cy="50"  r="22" fill="#0c1e48"/>
+      <circle cx="58"  cy="50"  r="13" fill="#0d4a94"/>
+      <circle cx="160" cy="214" r="19" fill="#0b1840"/>
+      <circle cx="160" cy="214" r="11" fill="#0d3572"/>
+      <circle cx="268" cy="40"  r="22" fill="#0d2e60"/>
+      <circle cx="268" cy="40"  r="13" fill="#0a6fc4"/>
+      <circle cx="160" cy="118" r="7"  fill="#0878b8"/>
+    </g>
+    <g transform="translate(0 360)">
+      <text x="25" y="0" font-family="system-ui,'Arial Black',sans-serif"
+            font-weight="800" font-size="64" fill="#18273a" letter-spacing="2">NEX</text>
+      <g transform="translate(205 -22)">
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#18273a" stroke-width="9"/>
+        <line x1="14" y1="-14" x2="28" y2="-28" stroke="#18273a" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="28" cy="-28" r="8" fill="#18273a"/>
+      </g>
+      <text x="245" y="0" font-family="system-ui,'Arial Black',sans-serif"
+            font-weight="800" font-size="64" fill="#18273a" letter-spacing="2">RA</text>
+    </g>
+  </svg>
+</div>
+
+<!-- MODO OSCURO -->
+<div class="panel dark">
+  <label>Modo Oscuro</label>
+  <svg viewBox="0 0 400 400" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ngD" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%"   stop-color="#1a5cbf"/>
+        <stop offset="42%"  stop-color="#0a9fd4"/>
+        <stop offset="100%" stop-color="#00e5ff"/>
+      </linearGradient>
+      <filter id="gd" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g transform="translate(-5 5) scale(1.245)">
+      <path d="M 67,41 C 76,132 134,206 160,207 C 188,207 244,76 260,33"
+            fill="none" stroke="url(#ngD)" stroke-width="8.5" stroke-linecap="round" filter="url(#gd)"/>
+      <path d="M 58,50 C 66,140 128,214 160,214 C 192,214 248,82 268,40"
+            fill="none" stroke="url(#ngD)" stroke-width="8.5" stroke-linecap="round" filter="url(#gd)"/>
+      <path d="M 49,59 C 56,148 122,222 160,221 C 196,221 252,88 276,47 L 293,28"
+            fill="none" stroke="url(#ngD)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#gd)"/>
+      <polyline points="279,18 293,28 283,42"
+                fill="none" stroke="url(#ngD)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#gd)"/>
+      <circle cx="58"  cy="50"  r="22" fill="#0e2462"/>
+      <circle cx="58"  cy="50"  r="13" fill="#1260b8"/>
+      <circle cx="160" cy="214" r="19" fill="#0c1c52"/>
+      <circle cx="160" cy="214" r="11" fill="#0d3d88"/>
+      <circle cx="268" cy="40"  r="22" fill="#0e3678"/>
+      <circle cx="268" cy="40"  r="13" fill="#0a8fd8"/>
+      <circle cx="160" cy="118" r="7"  fill="#00d4f0" filter="url(#gd)"/>
+    </g>
+    <g transform="translate(0 360)">
+      <text x="25" y="0" font-family="system-ui,'Arial Black',sans-serif"
+            font-weight="800" font-size="64" fill="#d0eeff" letter-spacing="2">NEX</text>
+      <g transform="translate(205 -22)">
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#d0eeff" stroke-width="9"/>
+        <line x1="14" y1="-14" x2="28" y2="-28" stroke="#d0eeff" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="28" cy="-28" r="8" fill="#d0eeff"/>
+      </g>
+      <text x="245" y="0" font-family="system-ui,'Arial Black',sans-serif"
+            font-weight="800" font-size="64" fill="#d0eeff" letter-spacing="2">RA</text>
+    </g>
+  </svg>
+</div>
+
+</body>
+</html>

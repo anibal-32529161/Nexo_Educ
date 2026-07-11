@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300">
+  <defs>
+    <linearGradient id="ngd" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%"   stop-color="#1a5cbf"/>
+      <stop offset="42%"  stop-color="#0a9fd4"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+
+    <!-- Glow filter for tracks -->
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Stronger glow for node circles -->
+    <filter id="nodeglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── THREE PARALLEL BEZIER CURVES (with glow) ── -->
+  <!-- Inner line -->
+  <path d="M 67,41 C 76,132 134,206 160,207 C 188,207 244,76 260,33"
+        fill="none" stroke="url(#ngd)" stroke-width="8.5" stroke-linecap="round"
+        filter="url(#glow)"/>
+  <!-- Middle line -->
+  <path d="M 58,50 C 66,140 128,214 160,214 C 192,214 248,82 268,40"
+        fill="none" stroke="url(#ngd)" stroke-width="8.5" stroke-linecap="round"
+        filter="url(#glow)"/>
+  <!-- Outer line + arrow shaft -->
+  <path d="M 49,59 C 56,148 122,222 160,221 C 196,221 252,88 276,47 L 293,28"
+        fill="none" stroke="url(#ngd)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#glow)"/>
+  <!-- Arrow head -->
+  <polyline points="279,18 293,28 283,42"
+            fill="none" stroke="url(#ngd)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"
+            filter="url(#glow)"/>
+
+  <!-- ── NODE CIRCLES (with glow) ── -->
+  <!-- Top-left node -->
+  <circle cx="58"  cy="50"  r="22" fill="#0e2462" filter="url(#nodeglow)"/>
+  <circle cx="58"  cy="50"  r="13" fill="#1260b8"/>
+  <!-- Bottom center node -->
+  <circle cx="160" cy="214" r="19" fill="#0c1c52" filter="url(#nodeglow)"/>
+  <circle cx="160" cy="214" r="11" fill="#0d3d88"/>
+  <!-- Top-right node -->
+  <circle cx="268" cy="40"  r="22" fill="#0e3678" filter="url(#nodeglow)"/>
+  <circle cx="268" cy="40"  r="13" fill="#0a8fd8"/>
+  <!-- Center crossing dot -->
+  <circle cx="160" cy="118" r="7"  fill="#00d4f0" filter="url(#glow)"/>
+
+  <!-- ── NEXORA TEXT (light for dark backgrounds) ── -->
+  <text x="160" y="285"
+        text-anchor="middle"
+        font-family="'Arial Black', 'Impact', Arial, sans-serif"
+        font-size="54"
+        font-weight="900"
+        letter-spacing="2"
+        fill="#d8f2ff">NEXORA</text>
+</svg>
